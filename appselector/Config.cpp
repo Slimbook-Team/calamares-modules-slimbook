@@ -54,7 +54,7 @@ void Config::setConfigurationMap(const QVariantMap& configurationMap)
             QMap<QString, QVariant>::const_iterator description = app.find("description");
             QMap<QString, QVariant>::const_iterator checked = app.find("checked");
             
-            if (name!=app.end() and display!=app.end() and icon!=app.end()) {
+            if (name!=app.end()) {
                 QString desc = (description!=app.end()) ? description.value().toString() : QString();
                 bool chk = (checked!=app.end()) ? checked.value().toBool() : false;
                 

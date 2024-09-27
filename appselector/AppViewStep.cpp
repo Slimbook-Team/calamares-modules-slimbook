@@ -97,5 +97,5 @@ void AppViewStep::onRetranslate()
     
     QString lang = conf["LANG"].toString();
     
-    m_config->setLang(lang);
+
 }
