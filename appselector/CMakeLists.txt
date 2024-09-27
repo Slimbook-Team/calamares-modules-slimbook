@@ -10,7 +10,5 @@ calamares_add_plugin( appselector
         Config.cpp
     RESOURCES
         appselector.qrc
-    LINK_PRIVATE_LIBRARIES
-        KF6::CoreAddons
     SHARED_LIB
 )

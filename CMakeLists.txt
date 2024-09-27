@@ -14,7 +14,7 @@ find_package(ECM ${ECM_VERSION} NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
 
 find_package( Qt6 ${QT_VERSION} CONFIG REQUIRED Core Quick QuickWidgets )
-find_package( KF6 QUIET COMPONENTS CoreAddons Crash DBusAddons )
+#find_package( KF6 QUIET COMPONENTS CoreAddons Crash DBusAddons )
 find_package( Calamares  REQUIRED calamaresui )
 
 # Recognize more macros to trigger automoc
