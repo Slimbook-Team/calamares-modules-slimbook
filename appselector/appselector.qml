@@ -11,9 +11,15 @@ QQC2.Page {
         spacing: Kirigami.Units.largeSpacing*4
         anchors.fill: parent
         QQC2.Label {
-            id: label
+            id: lblTitle
             Layout.fillWidth: true
-            text: "Slimbook Apps"
+            text: "Slimbook Apps for " + config.name
+        }
+
+        QQC2.Label {
+            id: lblDevice
+            Layout.fillWidth: true
+            text: "Device:" + config.product
         }
 
         ListView {
@@ -29,32 +35,28 @@ QQC2.Page {
             QQC2.ScrollBar.vertical: QQC2.ScrollBar {}
 
             delegate:
-                ColumnLayout {
 
-                    RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
+                RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
 
-                        QQC2.CheckBox {
-                            /*
-                            icon.name: modelData.iconName
-                            icon.width: 32
-                            icon.height: 32
-                            */
-                            checked: modelData.checked
+                    QQC2.CheckBox {
+                        /*
+                        icon.name: modelData.iconName
+                        icon.width: 32
+                        icon.height: 32
+                        */
+                        checked: modelData.checked
 
-                            onToggled: {
-                                modelData.checked=checked;
-                            }
-                        }
-                        QQC2.Label {
-                            text: modelData.name
+                        onToggled: {
+
+                            modelData.checked=checked;
                         }
                     }
-
                     QQC2.Label {
                         text: modelData.description
                     }
                 }
+
             }
     }
 }

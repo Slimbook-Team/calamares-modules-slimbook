@@ -11,4 +11,6 @@ calamares_add_plugin( appselector
     RESOURCES
         appselector.qrc
     SHARED_LIB
+    LINK_LIBRARIES
+        slimbook
 )

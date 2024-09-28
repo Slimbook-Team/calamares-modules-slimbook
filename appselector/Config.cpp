@@ -1,15 +1,36 @@
 
 #include "Config.hpp"
 
+#include <slimbook.h>
+
 #include <GlobalStorage.h>
 #include <JobQueue.h>
+#include <QMap>
 
 #include <QDebug>
 
 Config::Config(QObject* parent) : QObject(parent)
 {
+    m_slimbook_model = slb_info_get_model();
+    m_slimbook_product = slb_info_product_name();
+    m_slimbook_family = slb_info_get_family_name();
 
-    
+
+    QMap<QString,QString> pretty = {{"unknown","Unknown"},
+        {"prox","ProX"},
+        {"executive","Executive"},
+        {"titan","Titan"},
+        {"hero","Hero"},
+        {"hero-s","Hero-S"},
+        {"essential","Essential"},
+        {"elemental","Elemental"},
+        {"excalibur","Excalibur"},
+        {"one","One"},
+        {"zero","Zero"}
+    };
+
+    m_slimbook_name = pretty[m_slimbook_family];
+
 }
 
 void Config::store()
@@ -53,16 +74,34 @@ void Config::setConfigurationMap(const QVariantMap& configurationMap)
             QMap<QString, QVariant>::const_iterator name = app.find("name");
             QMap<QString, QVariant>::const_iterator description = app.find("description");
             QMap<QString, QVariant>::const_iterator checked = app.find("checked");
+            QMap<QString, QVariant>::const_iterator target = app.find("target");
             
             if (name!=app.end()) {
-                QString desc = (description!=app.end()) ? description.value().toString() : QString();
-                bool chk = (checked!=app.end()) ? checked.value().toBool() : false;
-                qWarning()<<"SLIMBOOK APP:"<<name.value().toString();
-                m_appsModel.append(new App(
-                    name.value().toString(),
-                    desc,
-                    chk
-                    ));
+
+                QList<QVariant> targets = target.value().toList();
+                bool found = false;
+
+                for (int n=0;n<targets.count();n++) {
+                    QString value = targets[n].toString();
+
+                    if (value == m_slimbook_family || value == "all") {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+
+                    QString desc = (description!=app.end()) ? description.value().toString() : name.value().toString();
+
+                    bool chk = (checked!=app.end()) ? checked.value().toBool() : false;
+                    qWarning()<<"SLIMBOOK APP:"<<name.value().toString();
+                    m_appsModel.append(new App(
+                        name.value().toString(),
+                        desc,
+                        chk
+                        ));
+                }
             }
             
             j++;

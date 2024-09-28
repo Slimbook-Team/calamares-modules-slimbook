@@ -53,6 +53,10 @@ class Config : public QObject
     Q_OBJECT
     
     Q_PROPERTY(QList<QObject *> appsModel MEMBER m_appsModel NOTIFY appsModelChanged)
+    Q_PROPERTY( int model MEMBER m_slimbook_model READ model CONSTANT)
+    Q_PROPERTY( QString family MEMBER m_slimbook_family READ family CONSTANT)
+    Q_PROPERTY( QString name MEMBER m_slimbook_name READ name CONSTANT)
+    Q_PROPERTY( QString product MEMBER m_slimbook_product READ product CONSTANT)
     
     public:
     
@@ -61,17 +65,40 @@ class Config : public QObject
     void setConfigurationMap(const QVariantMap& configurationMap);
     
     void store();
-    
+
+    QString product() const
+    {
+        return m_slimbook_product;
+    }
+
+    QString name() const
+    {
+       return m_slimbook_name;
+    }
+
+    QString family() const
+    {
+        return m_slimbook_family;
+    }
+
+    int model() const
+    {
+        return m_slimbook_model;
+    }
     
     QList<QObject *> m_appsModel;
         
     Q_SIGNALS:
     
     void appsModelChanged();
-    
+
+
     private:
     
-    
+    QString m_slimbook_product;
+    QString m_slimbook_name;
+    QString m_slimbook_family;
+    int m_slimbook_model;
 };
 
 #endif
