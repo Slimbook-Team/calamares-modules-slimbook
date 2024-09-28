@@ -4,15 +4,16 @@ import QtQuick.Controls 2.6 as QQC2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.5 as Kirigami
 
-Component {
+QQC2.Page {
+    anchors.fill: parent
 
     ColumnLayout {
         spacing: Kirigami.Units.largeSpacing*4
-        //anchors.fill: parent
+        anchors.fill: parent
         QQC2.Label {
             id: label
             Layout.fillWidth: true
-            text: "Apps"
+            text: "Slimbook Apps"
         }
 
         ListView {
@@ -46,7 +47,7 @@ Component {
                             }
                         }
                         QQC2.Label {
-                            text: +modelData.displayName
+                            text: modelData.name
                         }
                     }
 

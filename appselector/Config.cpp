@@ -40,14 +40,14 @@ void Config::setConfigurationMap(const QVariantMap& configurationMap)
 {
     
     QMap<QString, QVariant>::const_iterator i = configurationMap.find("apps");
-    
+
     if (i!=configurationMap.end()) {
         QVariantList apps = i.value().toList();
         
         QList<QVariant>::const_iterator j = apps.begin();
-        
+
         while (j!=apps.end()) {
-            
+
             QMap<QString,QVariant> app = (*j).toMap();
             
             QMap<QString, QVariant>::const_iterator name = app.find("name");
@@ -57,7 +57,7 @@ void Config::setConfigurationMap(const QVariantMap& configurationMap)
             if (name!=app.end()) {
                 QString desc = (description!=app.end()) ? description.value().toString() : QString();
                 bool chk = (checked!=app.end()) ? checked.value().toBool() : false;
-                
+                qWarning()<<"SLIMBOOK APP:"<<name.value().toString();
                 m_appsModel.append(new App(
                     name.value().toString(),
                     desc,

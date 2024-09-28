@@ -13,7 +13,7 @@ class App: public QObject
     Q_OBJECT
     
     Q_PROPERTY( QString name MEMBER m_name READ name CONSTANT)
-    Q_PROPERTY( QString description MEMBER m_iconName READ description CONSTANT)
+    Q_PROPERTY( QString description MEMBER m_description READ description CONSTANT)
     Q_PROPERTY (bool checked MEMBER m_checked NOTIFY checkedChanged)
     
     public:
