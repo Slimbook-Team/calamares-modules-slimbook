@@ -46,6 +46,7 @@ QQC2.Page {
                         icon.height: 32
                         */
                         checked: modelData.checked
+                        enabled: modelData.core
 
                         onToggled: {
 

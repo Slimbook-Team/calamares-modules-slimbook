@@ -14,14 +14,21 @@ class App: public QObject
     
     Q_PROPERTY( QString name MEMBER m_name READ name CONSTANT)
     Q_PROPERTY( QString description MEMBER m_description READ description CONSTANT)
-    Q_PROPERTY (bool checked MEMBER m_checked NOTIFY checkedChanged)
-    
+    Q_PROPERTY( bool checked MEMBER m_checked NOTIFY checkedChanged)
+    Q_PROPERTY( bool core MEMBER m_core READ core CONSTANT)
+
     public:
     
     QString m_name;
     QString m_description;
     bool m_checked;
+    bool m_core;
     
+    bool core() const
+    {
+        return m_core;
+    }
+
     QString name () const
     {
         return m_name;
@@ -32,10 +39,11 @@ class App: public QObject
         return m_description;
     }
     
-    App(QString name, QString description, bool checked) :
+    App(QString name, QString description, bool core) :
         m_name(name),
         m_description(description),
-        m_checked(checked)
+        m_core(core),
+        m_checked(true)
     {
     }
     

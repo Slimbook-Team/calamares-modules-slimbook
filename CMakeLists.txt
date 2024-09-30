@@ -6,6 +6,8 @@ project( calamares-modules-slimbook
     LANGUAGES C CXX
 )
 
+option(USE_QT6 "Use Qt6 instead of Qt5" ON)
+
 #hack
 set (SYSTEM_LIB "/usr/lib/x86_64-linux-gnu/")
 set( CMAKE_MODULE_PATH ${SYSTEM_LIB}/cmake/Calamares )
@@ -13,8 +15,15 @@ set( CMAKE_MODULE_PATH ${SYSTEM_LIB}/cmake/Calamares )
 find_package(ECM ${ECM_VERSION} NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
 
-find_package( Qt6 ${QT_VERSION} CONFIG REQUIRED Core Quick QuickWidgets )
-find_package( KF6 QUIET COMPONENTS CoreAddons Crash DBusAddons )
+if (USE_QT6)
+    find_package( Qt6 ${QT_VERSION} CONFIG REQUIRED Core Quick QuickWidgets )
+    find_package( KF6 QUIET COMPONENTS CoreAddons Crash DBusAddons )
+else()
+    find_package( Qt5 ${QT_VERSION} CONFIG REQUIRED Core Quick QuickWidgets )
+    find_package( KF5 QUIET COMPONENTS CoreAddons Crash DBusAddons )
+
+endif()
+
 find_package( Calamares  REQUIRED calamaresui )
 
 # Recognize more macros to trigger automoc
