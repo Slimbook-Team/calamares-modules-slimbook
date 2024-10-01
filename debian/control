@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Slimbook <dev@slimbook.es>
 Build-Depends: debhelper-compat (= 13),
-                libslimbook-dev
+                libslimbook-dev,
                 calamares,
                 cmake,
                 cryptsetup,
