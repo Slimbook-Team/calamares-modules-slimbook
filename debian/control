@@ -3,6 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Slimbook <dev@slimbook.es>
 Build-Depends: debhelper-compat (= 13),
+                libslimbook-dev
                 calamares,
                 cmake,
                 cryptsetup,
@@ -50,7 +51,7 @@ Package: calamares-modules-slimbook-qt5
 Architecture: any
 Provides: calamares-modules-slimbook
 Conflicts: calamares-modules-slimbook-qt6
-Depends: calamares
+Depends: calamares, libslimbook1
 Description: Slimbook calamares modules
  Slimbook calamares modules
 
