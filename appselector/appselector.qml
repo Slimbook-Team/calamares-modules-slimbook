@@ -1,32 +1,41 @@
+/* === This file is part of calamares-modules-slimbook - <https://github.com/Slimbook-Team> ===
+ *
+ *   SPDX-FileCopyrightText: 2024 Slimbook <dev@slimbook.es>
+ *   SPDX-License-Identifier: GPL-3.0-or-later
+ *   License-Filename: LICENSE
+ *
+  */
+
 import QtQuick 2.6
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.6 as QQC2
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.kirigami 2.5 as Kirigami
 
 QQC2.Page {
     anchors.fill: parent
 
     ColumnLayout {
-        spacing: Kirigami.Units.largeSpacing*4
+        spacing: 12
         anchors.fill: parent
         QQC2.Label {
             id: lblTitle
             Layout.fillWidth: true
-            text: "Slimbook Apps for " + config.name
+            font.pointSize: 14
+            horizontalAlignment: Text.AlignHCenter
+            text: (config.name == "Unknown") ? qsTr("Slimbook Apps") : qsTr("Slimbook Apps for ") + config.name
         }
 
         QQC2.Label {
-            id: lblDevice
+            id: lblHelp
             Layout.fillWidth: true
-            text: "Device:" + config.product
+            text: qsTr("Select extra packages to install")
+            font.pointSize: 12
         }
 
         ListView {
             id: layoutsView
             Layout.fillWidth: true
             Layout.fillHeight: true
-            spacing: Kirigami.Units.largeSpacing*2
+            spacing: 6
 
             model: config.appsModel
 
@@ -37,16 +46,11 @@ QQC2.Page {
             delegate:
 
                 RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
+                    spacing: 4
 
                     QQC2.CheckBox {
-                        /*
-                        icon.name: modelData.iconName
-                        icon.width: 32
-                        icon.height: 32
-                        */
                         checked: modelData.checked
-                        enabled: modelData.core
+                        enabled: !modelData.core
 
                         onToggled: {
 
@@ -58,6 +62,14 @@ QQC2.Page {
                     }
                 }
 
+            }
+
+            QQC2.Label {
+                id: lblDevice
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignLeft
+                text: qsTr("Device: ") + config.product
+                font.pointSize: 8
             }
     }
 }
