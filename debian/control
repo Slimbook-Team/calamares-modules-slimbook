@@ -2,7 +2,7 @@ Source: calamares-modules-slimbook
 Section: utils
 Priority: optional
 Maintainer: Slimbook <dev@slimbook.es>
-Build-Depends: debhelper-compat (= 13), calamares-dev
+Build-Depends: debhelper-compat (= 13), calamares-dev, libslimbook-dev
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: https://slimbook.es
@@ -11,7 +11,7 @@ Package: calamares-modules-slimbook-qt6
 Architecture: any
 Provides: calamares-modules-slimbook
 Conflicts: calamares-modules-slimbook-qt5
-Depends: calamares
+Depends: calamares, libslimbook1
 Description: Slimbook calamares modules
  Slimbook calamares modules
 
