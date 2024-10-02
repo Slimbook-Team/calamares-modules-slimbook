@@ -1,3 +1,9 @@
+calamares-modules-slimbook (24.0.1~manualbuild1) noble; urgency=medium
+
+  * Sync with master
+
+ -- Slimbook <dev@slimbook.es>  Wed, 02 Oct 2024 12:20:23 +0200
+
 calamares-modules-slimbook (24.0.0~manualbuild1) noble; urgency=medium
 
   * Initial release.
