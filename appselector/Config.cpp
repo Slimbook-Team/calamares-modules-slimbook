@@ -1,3 +1,10 @@
+/* === This file is part of calamares-modules-slimbook - <https://github.com/Slimbook-Team> ===
+ *
+ *   SPDX-FileCopyrightText: 2024 Slimbook <dev@slimbook.es>
+ *   SPDX-License-Identifier: GPL-3.0-or-later
+ *   License-Filename: LICENSE
+ *
+  */
 
 #include "Config.hpp"
 
@@ -94,12 +101,15 @@ void Config::setConfigurationMap(const QVariantMap& configurationMap)
 
                     QString desc = (description!=app.end()) ? description.value().toString() : name.value().toString();
 
-                    bool chk = (core!=app.end()) ? core.value().toBool() : false;
-                    qWarning()<<"SLIMBOOK APP:"<<name.value().toString();
+                    bool iscore = (core!=app.end()) ? core.value().toBool() : false;
+                    bool ischeck = m_slimbook_model > 0;
+
+                    //qWarning()<<"SLIMBOOK APP:"<<name.value().toString();
                     m_appsModel.append(new App(
                         name.value().toString(),
                         desc,
-                        chk
+                        iscore,
+                        ischeck
                         ));
                 }
             }

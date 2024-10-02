@@ -1,3 +1,10 @@
+/* === This file is part of calamares-modules-slimbook - <https://github.com/Slimbook-Team> ===
+ *
+ *   SPDX-FileCopyrightText: 2024 Slimbook <dev@slimbook.es>
+ *   SPDX-License-Identifier: GPL-3.0-or-later
+ *   License-Filename: LICENSE
+ *
+  */
 
 #ifndef CONFIG_HPP
 #define CONFIG_HPP
@@ -39,11 +46,11 @@ class App: public QObject
         return m_description;
     }
     
-    App(QString name, QString description, bool core) :
+    App(QString name, QString description, bool core, bool checked) :
         m_name(name),
         m_description(description),
         m_core(core),
-        m_checked(true)
+        m_checked(checked)
     {
     }
     
