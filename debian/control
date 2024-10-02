@@ -51,7 +51,7 @@ Package: calamares-modules-slimbook-qt5
 Architecture: any
 Provides: calamares-modules-slimbook
 Conflicts: calamares-modules-slimbook-qt6
-Depends: calamares, libslimbook1
+Depends: calamares, libslimbook1, qml-module-qtquick-controls2, qml-module-qtquick-layouts
 Description: Slimbook calamares modules
  Slimbook calamares modules
 
