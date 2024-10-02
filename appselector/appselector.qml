@@ -19,13 +19,16 @@ QQC2.Page {
         QQC2.Label {
             id: lblTitle
             Layout.fillWidth: true
-            text: "Slimbook Apps for " + config.name
+            font.pointSize: 14
+            horizontalAlignment: Text.AlignHCenter
+            text: (config.name == "Unknown") ? qsTr("Slimbook Apps") : qsTr("Slimbook Apps for ") + config.name
         }
 
         QQC2.Label {
-            id: lblDevice
+            id: lblHelp
             Layout.fillWidth: true
-            text: "Device:" + config.product
+            text: qsTr("Select extra packages to install")
+            font.pointSize: 12
         }
 
         ListView {
@@ -47,7 +50,7 @@ QQC2.Page {
 
                     QQC2.CheckBox {
                         checked: modelData.checked
-                        enabled: modelData.core
+                        enabled: !modelData.core
 
                         onToggled: {
 
@@ -59,6 +62,14 @@ QQC2.Page {
                     }
                 }
 
+            }
+
+            QQC2.Label {
+                id: lblDevice
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignLeft
+                text: qsTr("Device: ") + config.product
+                font.pointSize: 8
             }
     }
 }

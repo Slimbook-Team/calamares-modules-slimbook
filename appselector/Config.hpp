@@ -46,11 +46,11 @@ class App: public QObject
         return m_description;
     }
     
-    App(QString name, QString description, bool core) :
+    App(QString name, QString description, bool core, bool checked) :
         m_name(name),
         m_description(description),
         m_core(core),
-        m_checked(true)
+        m_checked(checked)
     {
     }
     
