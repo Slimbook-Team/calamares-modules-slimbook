@@ -1,3 +1,10 @@
+/* === This file is part of calamares-modules-slimbook - <https://github.com/Slimbook-Team> ===
+ *
+ *   SPDX-FileCopyrightText: 2024 Slimbook <dev@slimbook.es>
+ *   SPDX-License-Identifier: GPL-3.0-or-later
+ *   License-Filename: LICENSE
+ *
+  */
 
 #include "Config.hpp"
 
