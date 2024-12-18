@@ -33,7 +33,10 @@ Config::Config(QObject* parent) : QObject(parent)
         {"elemental","Elemental"},
         {"excalibur","Excalibur"},
         {"one","One"},
-        {"zero","Zero"}
+        {"zero","Zero"},
+        {"nas","NAS"},
+        {"evo","Evo"},
+        {"creative","Creative"}
     };
 
     m_slimbook_name = pretty[m_slimbook_family];
