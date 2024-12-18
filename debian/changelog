@@ -1,3 +1,9 @@
+calamares-modules-slimbook (24.1.0) noble; urgency=medium
+
+  * Added support for new models
+
+ -- Slimbook <dev@slimbook.es>  Wed, 18 Dec 2024 12:29:04 +0100
+
 calamares-modules-slimbook (24.0.1) noble; urgency=medium
 
   * Removed some qml dependencies
