@@ -1,3 +1,9 @@
+calamares-modules-slimbook (24.1.0~manualbuild2) noble; urgency=medium
+
+  * Recompiled with latests qt6/calamares libs
+
+ -- Slimbook <dev@sñimbook.es>  Thu, 03 Apr 2025 09:15:44 +0200
+
 calamares-modules-slimbook (24.1.0~manualbuild1) noble; urgency=medium
 
   * Added support for new models
