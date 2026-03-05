@@ -1,8 +1,14 @@
+calamares-modules-slimbook (24.1.0~manualbuild3) noble; urgency=medium
+
+  * Compiled against libcalamares 3.4
+
+ -- Slimbook <dev@slimbook.es>  Thu, 05 Mar 2026 14:42:21 +0100
+
 calamares-modules-slimbook (24.1.0~manualbuild2) noble; urgency=medium
 
   * Recompiled with latests qt6/calamares libs
 
- -- Slimbook <dev@sñimbook.es>  Thu, 03 Apr 2025 09:15:44 +0200
+ -- Slimbook <dev@slimbook.es>  Thu, 03 Apr 2025 09:15:44 +0200
 
 calamares-modules-slimbook (24.1.0~manualbuild1) noble; urgency=medium
 
