@@ -7,4 +7,4 @@ PKGDIR=debian/tmp
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-	-DUSE_QT6=OFF
+	-DUSE_QT6=ON
