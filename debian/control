@@ -21,7 +21,7 @@ Homepage: https://slimbook.es
 Package: calamares-modules-slimbook-calamares3.3
 Architecture: any
 Provides: calamares-modules-slimbook
-Depends: calamares, libslimbook1, qml-module-qtquick-controls2, qml-module-qtquick-layouts
+Depends: calamares, libslimbook1, qml6-module-qtquick-controls, qml6-module-qtquick-layouts
 Description: Slimbook calamares modules
  Slimbook calamares modules
 
