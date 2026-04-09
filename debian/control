@@ -4,7 +4,9 @@ Priority: optional
 Maintainer: Slimbook <dev@slimbook.es>
 Build-Depends: debhelper-compat (= 13),
                 libslimbook-dev,
-                calamares-extensions
+                calamares-extensions,
+                cmake,
+                build-essential
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: https://slimbook.es
