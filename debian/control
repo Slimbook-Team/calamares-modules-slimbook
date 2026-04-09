@@ -7,7 +7,8 @@ Build-Depends: debhelper-compat (= 13),
                 calamares-extensions,
                 cmake,
                 build-essential,
-                qt6-base-dev
+                qt6-base-dev,
+                qml6-module-qtquick
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: https://slimbook.es
