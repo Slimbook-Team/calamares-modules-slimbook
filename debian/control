@@ -9,7 +9,8 @@ Build-Depends: debhelper-compat (= 13),
                 build-essential,
                 qt6-base-dev,
                 qt6-declarative-dev,
-                linguist-qt6
+                linguist-qt6,
+                qt6-tools-dev
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: https://slimbook.es
